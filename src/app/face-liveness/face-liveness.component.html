@@ -1,0 +1,55 @@
+<ngx-spinner type="ball-scale-multiple"></ngx-spinner>
+
+
+@if (start_liveness_session) {
+  <div class="verification-container ">
+    <div class="header-container animate__animated animate__fadeIn">
+      <h3 class="verification-title">Verificación Facial</h3>
+      <p class="verification-subtitle">
+        Pasarás por un proceso de verificación facial para demostrar que eres una persona real.
+      </p>
+    </div>
+    <div class="card-container ">
+      @if (start_liveness_session) {
+        <div id="faceLivenessReactContainer">
+          <div class="card-content">
+            <div class="faceliveness-wrapper">
+              <app-faceliveness-react-wrapper #faceliveness [sessionId]="session_id"
+                (livenessResults)="handleLivenessAnalysisResults($event)"
+                (livenessErrors)="handleErrors($event)">
+              </app-faceliveness-react-wrapper>
+            </div>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+}
+
+
+@if (completoRegistro) {
+  <div class="success-container ">
+    <div class="success-message animate__animated animate__zoomIn">
+      <mat-icon class="success-icon">check_circle</mat-icon>
+      <br>
+        <br>
+          <h3>¡Felicidades <strong> {{nombreUsuario}} </strong> !</h3>
+          <br>
+            <p>Has creado tu cuenta exitosamente.</p>
+          </div>
+          <button class="amplify-button--primary submit-button" (click)="navigateToLogin()">Iniciar sesión</button>
+        </div>
+      }
+
+
+      <!-- Contenedor de error -->
+      @if (!is_live && ocurrioError) {
+        <div class="error-container">
+          <div class="error-message animate__animated animate__fadeIn">
+            <mat-icon class="error-icon">error</mat-icon>
+            <h3>¡Oops!</h3>
+            <p>{{face_live_message}}</p>
+            <button class="amplify-button--primary submit-button" (click)="navigateBack()">Atrás</button>
+          </div>
+        </div>
+      }

@@ -1,0 +1,57 @@
+{
+  "name": "aws-rekognition-liveness-detection-angular",
+  "version": "0.0.0",
+  "scripts": {
+    "ng": "ng",
+    "start": "node --max-old-space-size=4096 ./node_modules/@angular/cli/bin/ng serve",
+    "build": "ng build",
+    "watch": "ng build --watch --configuration development",
+    "test": "ng test"
+  },
+  "private": true,
+  "dependencies": {
+    "@angular/animations": "^19.1.4",
+    "@angular/cdk": "^19.1.2",
+    "@angular/common": "^19.1.4",
+    "@angular/compiler": "^19.1.4",
+    "@angular/core": "^19.1.4",
+    "@angular/forms": "^19.1.4",
+    "@angular/material": "^19.1.2",
+    "@angular/platform-browser": "^19.1.4",
+    "@angular/platform-browser-dynamic": "^19.1.4",
+    "@angular/router": "^19.1.4",
+    "@aws-amplify/ui-angular": "^3.2.15",
+    "@aws-amplify/ui-react-liveness": "^1.0.0",
+    "animate.css": "^4.1.1",
+    "aws-amplify": "^5.3.21",
+    "aws-sdk": "^2.1691.0",
+    "crypto-js": "^4.2.0",
+    "ngx-spinner": "^17.0.0",
+    "ngx-webcam": "^0.4.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "rxjs": "~7.5.0",
+    "tslib": "^2.3.0",
+    "zone.js": "~0.15.0"
+  },
+  "devDependencies": {
+    "@angular-devkit/build-angular": "^19.1.5",
+    "@angular/cli": "~19.1.5",
+    "@angular/compiler-cli": "^19.1.4",
+    "@types/jasmine": "~4.0.0",
+    "@types/long": "4.0.0",
+    "@types/react": "^17.0.2",
+    "@types/react-dom": "^17.0.2",
+    "jasmine-core": "~4.3.0",
+    "karma": "~6.4.0",
+    "karma-chrome-launcher": "~3.1.0",
+    "karma-coverage": "~2.2.0",
+    "karma-jasmine": "~5.1.0",
+    "karma-jasmine-html-reporter": "~2.0.0",
+    "typescript": "~5.7.3"
+  },
+  "resolutions": {
+    "buffer": "^5.7.1",
+    "tslib": "^2.3.0"
+  }
+}

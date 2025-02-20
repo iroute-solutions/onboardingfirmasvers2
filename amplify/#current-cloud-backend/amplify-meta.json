@@ -1,0 +1,58 @@
+{
+  "providers": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-facelivenessbm-dev-bc25b-authRole",
+      "UnauthRoleArn": "arn:aws:iam::308528169754:role/amplify-facelivenessbm-dev-bc25b-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::308528169754:role/amplify-facelivenessbm-dev-bc25b-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-facelivenessbm-dev-bc25b-deployment",
+      "UnauthRoleName": "amplify-facelivenessbm-dev-bc25b-unauthRole",
+      "StackName": "amplify-facelivenessbm-dev-bc25b",
+      "StackId": "arn:aws:cloudformation:us-east-1:308528169754:stack/amplify-facelivenessbm-dev-bc25b/003b0ee0-298e-11ef-80bf-126bcb0629ab",
+      "AmplifyAppId": "d22n8m2n5hutcq"
+    }
+  },
+  "auth": {
+    "facelivenessbm7e216ce0": {
+      "service": "Cognito",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "customAuth": false,
+      "frontendAuthConfig": {
+        "socialProviders": [],
+        "usernameAttributes": [
+          "EMAIL"
+        ],
+        "signupAttributes": [
+          "EMAIL"
+        ],
+        "passwordProtectionSettings": {
+          "passwordPolicyMinLength": 8,
+          "passwordPolicyCharacters": []
+        },
+        "mfaConfiguration": "OFF",
+        "mfaTypes": [
+          "SMS"
+        ],
+        "verificationMechanisms": [
+          "EMAIL"
+        ]
+      },
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-facelivenessbm-dev-bc25b-deployment/amplify-cfn-templates/auth/facelivenessbm7e216ce0-cloudformation-template.json",
+        "logicalId": "authfacelivenessbm7e216ce0"
+      },
+      "lastPushTimeStamp": "2024-06-13T14:12:48.376Z",
+      "output": {
+        "UserPoolId": "us-east-1_ChoUkFFNu",
+        "AppClientIDWeb": "1mj9b0neaiqibu8lhlp06mte3n",
+        "AppClientID": "72cagjbdptc71pudr5dukj5iaq",
+        "IdentityPoolId": "us-east-1:cbdfab43-dd23-4754-b88f-40e259043417",
+        "UserPoolArn": "arn:aws:cognito-idp:us-east-1:308528169754:userpool/us-east-1_ChoUkFFNu",
+        "IdentityPoolName": "facelivenessbm7e216ce0_identitypool_7e216ce0__dev",
+        "UserPoolName": "facelivenessbm7e216ce0_userpool_7e216ce0"
+      },
+      "lastPushDirHash": "ttioUQt1vdA05v5amzADDivewso="
+    }
+  }
+}

@@ -1,0 +1,324 @@
+body {
+  margin: 0;
+  font-family: Roboto, Arial, sans-serif;
+  height: 100vh;
+  background-color: #f0f0f0;
+}
+
+.login-container {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
+.form-section {
+  background-color: #f6f7fc; /* Beige */
+  padding: 40px;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+h3 {
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: #333;
+}
+
+.mensaje-login {
+  margin-bottom: 20px;
+  font-size: 16px;
+  color: #666;
+  
+}
+.switch-form {
+  margin-top: 20px;
+  font-size: 14px;
+}
+
+.question-text {
+  color: #000; /* Color para el texto de la pregunta */
+}
+
+.switch-form a {
+  color: #0f546bff; /* Color para el enlace */
+  text-decoration: none;
+}
+
+.switch-form a:hover {
+  text-decoration: underline;
+}
+
+
+.inputs-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 400px; /* Ancho máximo para el cuadrado */
+}
+
+.inputs {
+  background-color: #f6f7fc; /* Beige */
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+}
+
+.form-group {
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.mat-mdc-form-field {
+  width: 100%;
+}
+
+/* TODO(mdc-migration): The following rule targets internal classes of form-field that may no longer apply for the MDC version. */
+.mat-mdc-form-field .mat-form-field-flex {
+  background-color: white; /* Fondo blanco para el campo de entrada */
+}
+
+/* TODO(mdc-migration): The following rule targets internal classes of form-field that may no longer apply for the MDC version. */
+.mat-mdc-form-field .mat-form-field-infix {
+  background-color: white; /* Fondo blanco para el área del input */
+}
+
+/* TODO(mdc-migration): The following rule targets internal classes of form-field that may no longer apply for the MDC version. */
+.mat-mdc-form-field .mat-form-field-label {
+  color: rgba(0, 0, 0, 0.6); /* Color del label */
+}
+
+.btn {
+  width: 100%; /* Botón del mismo tamaño que los inputs */
+  padding: 12px 0; /* Ajusta la altura del botón */
+  font-size: 16px; /* Tamaño de fuente del botón */
+}
+
+
+.image-section {
+  width: 50%;
+  // height: 100vh;
+//  background-image: url('https://betachon.com/wp-content/uploads/2022/12/carrier-agreement-vertical-min-scaled.jpg');
+  background-image: url('https://cdn.computerhoy.com/sites/navi.axelspringer.es/public/media/image/2021/10/certificado-digital-dni-electronico-firma-digital-firma-electronica-diferencias-sirve-cada-2489173.jpg');
+  // background-image: url('https://pedirayudas.es/wp-content/uploads/2023/12/Para-que-sirve-la-firma-digital-y-como-la-puedo-obtener.png');
+  background-size: cover;
+  background-position: center;
+}
+
+
+.logo-container {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.company-logo {
+  width: 120px; /* Ajusta el tamaño del logo según tus necesidades */
+  height: auto;
+}
+
+
+.mat-grid-tile {
+  //width: 10vw !important;
+}
+
+.mat-grid-list {
+  // width: 10vw;
+}
+
+.icon-display-success {
+  transform: scale(3);
+  color: green;
+  padding-left: 10px !important;
+  padding-top: 3px !important;
+
+}
+
+.icon-display-failure {
+  transform: scale(3);
+  color: red;
+  padding-left: 10px !important;
+  padding-top: 5px !important;
+}
+
+.submit-button {
+  padding: 14px 40px;
+}
+
+
+.amplify-liveness-video-anchor {
+  width: 35vw !important;
+}
+
+.liveness-detector {
+  //width: 50vw !important;
+  height: 100% !important;
+}
+.amplify-liveness-figures{
+  display: none;
+}
+
+//BOTÓN CERRAR DE CÁMARA
+.amplify-liveness-cancel-button {
+  background-color: var(--amplify-colors-background-primary);
+}
+
+//BOTÓN EMPEZAR
+.amplify-button--primary{
+  background-color: #538F61;
+}
+
+//instrucciones
+.amplify-liveness-instruction-list {
+  display: none;
+}
+//alto camara verificando
+.amplify-liveness-camera-module {
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--amplify-components-liveness-camera-module-background-color);
+  border: 1px solid var(--amplify-colors-neutral-40);
+  position: relative;
+  height: 100% !important;
+}
+.verification-container {
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+height: 100vh;
+background-color: #f6f7fc;
+padding: 20px;
+text-align: center;
+}
+
+.header-container {
+margin-bottom: 30px;
+text-align: center;
+}
+
+// .verification-title {
+// font-size: 2.5rem !important;
+// font-weight: bold;
+// color: #2c3e50;
+// margin-bottom: 10px;
+// position: relative;
+// display: inline-block;
+// padding-bottom: 10px;
+// }
+
+// .verification-title::after {
+// content: '';
+// width: 400px;
+// height: 4px;
+// background-color: #3498db;
+// position: absolute;
+// bottom: 0;
+// left: 50%;
+// transform: translateX(-50%);
+// border-radius: 2px;
+// }
+
+.verification-subtitle {
+font-size: 1.25rem;
+color: #7f8c8d;
+max-width: 600px;
+margin: 0 auto;
+line-height: 1.6;
+}
+
+
+
+.card-content {
+background: white;
+padding: 30px;
+min-width: 40rem;
+box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.15); /* Sombra más pronunciada */
+border-radius: 10px;
+}
+
+.faceliveness-wrapper {
+margin-top: 20px;
+}
+
+
+.success-container, .error-container {
+  display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+height: 100vh; /* Ocupa toda la altura de la pantalla */
+background-color: #f0f2f5; /* Fondo suave */
+padding: 20px;
+text-align: center;
+}
+
+.success-message {
+background: white;
+width: 90%;
+max-width: 500px;
+padding: 30px;
+border-radius: 10px;
+box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.15); /* Sombra para profundidad */
+margin-bottom: 20px;
+}
+
+.error-message {
+  color: #dc3545;
+}
+.success-icon{
+  font-size: 4rem;
+color: #27ae60; /* Verde para éxito */
+display: block;
+margin: 0 auto 10px; /* Centrado horizontal */
+}
+
+
+.error-icon {
+  font-size: 4rem;
+  color: #f38748; /* Verde para éxito */
+  display: block;
+  margin: 0 auto 10px; /* Centrado horizontal */
+}
+
+.success-message h3 {
+font-size: 2rem;
+color: #2980b9; /* Azul para el título */
+margin: 0;
+}
+
+.success-message p {
+font-size: 1.2rem;
+color: #7f8c8d;
+margin: 10px 0 0;
+}
+
+.submit-button {
+  background-color: #3498db; /* Color de fondo del botón */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.submit-button:hover {
+  background-color: #2980b9; /* Color de fondo al pasar el ratón */
+}
+
+
+.mat-icon{
+  width: auto !important;
+  height: auto !important;
+}
+
+/* Styles for error snack-bar */
+.error-snackbar {
+  background-color: #f44336; /* Color de fondo del mensaje de error */
+  color: white; /* Color del texto */
+}

@@ -1,0 +1,185 @@
+@if (!nourl) {
+  <div class="login-container">
+    <div class="form-section">
+      <!-- Sección del logo -->
+      <div class="logo-container">
+        <img
+          src="assets/logo3.png"
+          alt="Logo de la Empresa"
+          class="company-logo"
+          />
+        </div>
+        <div class="inputs-container">
+          <!-- INICIO LOGIN -->
+          @if (isLoginVisible) {
+            <div
+              class="animate__animated animate__bounceInLeft"
+              >
+              <h3>
+                Iniciar sesión en <strong>Plataforma de Contratos & Firmas</strong>
+              </h3>
+              <p class="mensaje-login">
+                Bienvenido a la Plataforma de Contratos & Firmas. Por favor, ingresa
+                tus credenciales para acceder a tu cuenta y gestionar tus contratos de
+                manera segura.
+              </p>
+              <form [formGroup]="loginForm">
+                <mat-form-field appearance="fill" class="form-group">
+                  <mat-label>Cedula</mat-label>
+                  <input matInput formControlName="cedula" />
+                  @if (loginForm.get('cedula').hasError('required')) {
+                    <mat-error>
+                      El nombre de usuario es obligatorio.
+                    </mat-error>
+                  }
+                </mat-form-field>
+                <mat-form-field appearance="fill" class="form-group">
+                  <mat-label>Contraseña</mat-label>
+                  <input matInput type="password" formControlName="contrasena" />
+                  @if (loginForm.get('contrasena').hasError('required')) {
+                    <mat-error>
+                      La contraseña es obligatoria.
+                    </mat-error>
+                  }
+                </mat-form-field>
+                <button
+                  mat-raised-button
+                  color="primary"
+                  class="btn"
+                  (click)="logIn()"
+                  >
+                  Iniciar sesión
+                </button>
+                <p class="switch-form">
+                  <span class="question-text">¿No tienes cuenta? </span>
+                  <a href="#" (click)="showRegister($event)">Regístrate</a>
+                </p>
+              </form>
+            </div>
+          }
+
+          <!-- FIN LOGIN -->
+          <!-- INICIO REGISTRO -->
+          @if (!isLoginVisible) {
+            <div
+              class="animate__animated animate__bounceInLeft"
+              >
+              <h3>Registrate en <strong>Plataforma de Contratos & Firmas</strong></h3>
+              <form [formGroup]="registerForm">
+                <div>
+                  <mat-form-field appearance="fill" class="form-group">
+                    <mat-label>Cédula</mat-label>
+                    <input matInput formControlName="cedula" />
+                    @if (registerForm.get('cedula').hasError('required')) {
+                      <mat-error
+                        >
+                        La cédula es obligatoria.
+                      </mat-error>
+                    }
+                  </mat-form-field>
+                  <mat-form-field appearance="fill" class="form-group">
+                    <mat-label>Nombres</mat-label>
+                    <input matInput formControlName="nombres" />
+                    @if (registerForm.get('nombres').hasError('required')) {
+                      <mat-error
+                        >
+                        El nombre es obligatorio.
+                      </mat-error>
+                    }
+                  </mat-form-field>
+                  <mat-form-field appearance="fill" class="form-group">
+                    <mat-label>Apellido Paterno</mat-label>
+                    <input matInput formControlName="apellido_paterno" />
+                    @if (
+                      registerForm.get('apellido_paterno').hasError('required')
+                      ) {
+                      <mat-error
+                        >
+                        El apellido paterno es obligatorio.
+                      </mat-error>
+                    }
+                  </mat-form-field>
+                  <mat-form-field appearance="fill" class="form-group">
+                    <mat-label>Apellido Materno</mat-label>
+                    <input matInput formControlName="apellido_materno" />
+                  </mat-form-field>
+                  <mat-form-field appearance="fill" class="form-group">
+                    <mat-label>Correo Electrónico</mat-label>
+                    <input matInput formControlName="email" />
+                    @if (registerForm.get('email').hasError('required')) {
+                      <mat-error>
+                        El correo electrónico es obligatorio.
+                      </mat-error>
+                    }
+                    @if (registerForm.get('email').hasError('email')) {
+                      <mat-error>
+                        El correo electrónico debe ser válido.
+                      </mat-error>
+                    }
+                  </mat-form-field>
+                  <mat-form-field appearance="fill" class="form-group">
+                    <mat-label>Contraseña</mat-label>
+                    <input
+                      matInput
+                      [type]="hidePassword ? 'password' : 'text'"
+                      formControlName="contrasena"
+                    />
+                    <button
+                      mat-icon-button
+                      matSuffix
+                      type="button"
+                      (click)="togglePasswordVisibility()"
+                      [attr.aria-label]="'Toggle password visibility'"
+                      [attr.aria-pressed]="!hidePassword"
+                      >
+                      <mat-icon>{{
+                        hidePassword ? "visibility_off" : "visibility"
+                      }}</mat-icon>
+                    </button>
+                      @if (registerForm.get('contrasena').hasError('required')) {
+                        <mat-error
+                          >
+                          La contraseña es obligatoria.
+                        </mat-error>
+                      }
+                  </mat-form-field>
+                </div>
+                <button
+                  mat-raised-button
+                  color="primary"
+                  class="btn"
+                  (click)="registerUser()"
+                  >
+                  Registrarse
+                </button>
+                <p class="switch-form">
+                  ¿Ya tienes cuenta?
+                  <a href="#" (click)="showLogin($event)">Inicia sesión</a>
+                </p>
+              </form>
+            </div>
+          }
+          <!-- FIN REGISTRO -->
+        </div>
+      </div>
+    <div class="image-section"></div>
+  </div>
+}
+
+
+<!-- NO TIENE DOCUMENTOS PARA FIRMAR -->
+@if (nourl) {
+  <div class="success-container">
+    <div class="success-message animate__animated animate__zoomIn">
+      <mat-icon class="error-icon">warning</mat-icon>
+      <br />
+      <p>No tiene documentos por firmar.</p>
+    </div>
+    <button
+      class="amplify-button--primary submit-button"
+      (click)="navigateToLogin()"
+      >
+      Iniciar sesión
+    </button>
+  </div>
+}

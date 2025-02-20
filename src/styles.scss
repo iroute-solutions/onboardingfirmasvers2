@@ -1,0 +1,86 @@
+/* You can add global styles to this file, and also import other style files */
+@import "../node_modules/animate.css/animate.min.css";
+
+@import '@aws-amplify/ui-angular/theme.css';
+html, body { height: 100%; background-color: #f6f7fc;}
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+/* Asegúrate de que estos estilos se apliquen después de los estilos de Angular Material */
+.mat-mdc-form-field {
+    width: 100%;
+  }
+  
+  /* TODO(mdc-migration): The following rule targets internal classes of form-field that may no longer apply for the MDC version. */
+  .mat-mdc-form-field .mat-form-field-flex {
+    background-color: white; /* Fondo blanco para el campo de entrada */
+  }
+  
+  /* TODO(mdc-migration): The following rule targets internal classes of form-field that may no longer apply for the MDC version. */
+  .mat-mdc-form-field .mat-form-field-infix {
+    background-color: white; /* Fondo blanco para el área del input */
+  }
+  
+  /* TODO(mdc-migration): The following rule targets internal classes of form-field that may no longer apply for the MDC version. */
+  .mat-mdc-form-field .mat-form-field-label {
+    color: rgba(0, 0, 0, 0.6); /* Color del label (opcional) */
+  }
+  /* styles.scss */
+
+.mat-mdc-raised-button,
+.mat-mdc-unelevated-button,
+.mat-mdc-outlined-button {
+  background-color: #0f546bff !important;
+  color: white !important; /* Asegúrate de que el texto sea visible */
+}
+
+.mat-mdc-raised-button:hover,
+.mat-mdc-unelevated-button:hover,
+.mat-mdc-outlined-button:hover {
+  background-color: #0c3f55ff !important; /* Color más oscuro en hover */
+}
+
+
+.amplify-button--primary {
+  background-color: #0f546bff !important; /* Color más oscuro en hover */
+}
+
+.amplify-button--primary:hover {
+  background-color: #0c3f55ff !important; /* Color más oscuro en hover */
+
+}
+
+/* app.component.scss or styles.scss */
+
+.app-footer {
+  background-color: #0f546b; /* Cambia el color si es necesario */
+  color: white;
+  padding: 10px 20px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between; /* Espaciado entre los elementos a la izquierda y derecha */
+  align-items: center;
+}
+
+.footer-left,
+.footer-right {
+  display: flex;
+  align-items: center;
+}
+
+.copyright-symbol {
+  margin: 0 5px; /* Espaciado entre Firma digital y 2024 */
+  font-size: 1.2em; /* Ajusta el tamaño del símbolo si lo deseas */
+}
+.amplify-liveness-camera-module {
+  //todo aqui quite
+  // flex-direction: column;
+  // align-items: center;
+  //justify-content: center;
+  background-color: transparent !important;
+  border-color: white !important;
+  //margin-top: 20px;
+  //border: none !important;
+  //position: relative;
+  //margin: 6% 0px;
+}

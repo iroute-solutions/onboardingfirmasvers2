@@ -1,0 +1,188 @@
+.icon-display-success {
+  transform: scale(3);
+  color: green;
+  padding-left: 10px !important;
+  padding-top: 3px !important;
+
+}
+
+.icon-display-failure {
+  transform: scale(3);
+  color: red;
+  padding-left: 10px !important;
+  padding-top: 5px !important;
+}
+
+.submit-button {
+  padding: 14px 40px;
+}
+
+
+.amplify-liveness-video-anchor {
+  width: 35vw !important;
+}
+
+.liveness-detector {
+  //width: 50vw !important;
+  height: 100% !important;
+}
+.amplify-liveness-figures{
+  display: none;
+}
+
+//BOTÓN CERRAR DE CÁMARA
+.amplify-liveness-cancel-button {
+  background-color: var(--amplify-colors-background-primary);
+}
+
+//BOTÓN EMPEZAR
+.amplify-button--primary{
+  background-color: #538F61;
+}
+
+//instrucciones
+.amplify-liveness-instruction-list {
+  display: none;
+}
+//alto camara verificando
+.amplify-liveness-camera-module {
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--amplify-components-liveness-camera-module-background-color);
+  border: 1px solid var(--amplify-colors-neutral-40);
+  position: relative;
+  height: 100% !important;
+}
+.verification-container {
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+height: 100vh;
+background-color: #f6f7fc;
+padding: 20px;
+text-align: center;
+}
+
+.header-container {
+margin-bottom: 30px;
+text-align: center;
+}
+
+.verification-title {
+  font-size: 2.5rem !important;
+  font-weight: bold;
+  color: #2c3e50;
+  margin-bottom: 10px;
+  position: relative;
+  display: inline-block;
+  padding-bottom: 10px;
+}
+
+.verification-title::after {
+content: '';
+  width: 400px;
+  height: 4px;
+  background-color: #3498db;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 2px;
+}
+
+.verification-subtitle {
+  font-size: 1.25rem;
+  color: #7f8c8d;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+
+
+.card-content {
+  background: white;
+  padding: 30px;
+  min-width: 40rem;
+  box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.15); /* Sombra más pronunciada */
+  border-radius: 10px;
+}
+
+.faceliveness-wrapper {
+margin-top: 20px;
+}
+
+
+.success-container, .error-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh; /* Ocupa toda la altura de la pantalla */
+  background-color: #f0f2f5; /* Fondo suave */
+  padding: 20px;
+  text-align: center;
+}
+
+.success-message {
+background: white;
+width: 90%;
+max-width: 500px;
+padding: 30px;
+border-radius: 10px;
+box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.15); /* Sombra para profundidad */
+margin-bottom: 20px;
+}
+
+.error-message {
+  color: #dc3545;
+}
+.success-icon{
+  font-size: 4rem;
+color: #27ae60; /* Verde para éxito */
+display: block;
+margin: 0 auto 10px; /* Centrado horizontal */
+}
+
+
+.error-icon {
+  font-size: 4rem;
+  color: #f38748; /* Verde para éxito */
+  display: block;
+  margin: 0 auto 10px; /* Centrado horizontal */
+}
+
+.success-message h3 {
+font-size: 2rem;
+color: #2980b9; /* Azul para el título */
+margin: 0;
+}
+
+.success-message p {
+font-size: 1.2rem;
+color: #7f8c8d;
+margin: 10px 0 0;
+}
+
+.submit-button {
+  background-color: #3498db; /* Color de fondo del botón */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.submit-button:hover {
+background-color: #2980b9; /* Color de fondo al pasar el ratón */
+}
+
+
+.mat-icon{
+  width: auto !important;
+  height: auto !important;
+}
