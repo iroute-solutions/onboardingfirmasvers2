@@ -11,7 +11,7 @@ export const routes: Routes = [
   { path: "login", component: LoginComponent },
   { path: "register", component: LoginComponent },
   { path: "face-liveness", component: FaceLivenessComponent },
-  { path: "wizard/:contract-id", component: WizardComponent },
+  { path: "wizard", component: WizardComponent },
   { path: "**", redirectTo: "", pathMatch: "full" },
 ];
 

@@ -1,1 +1,182 @@
-<p>wizard works!</p>
+<div class="stepper-container">
+  <!-- Stepper en el lado izquierdo con orientación vertical -->
+  <mat-stepper
+    select
+    (selectionChange)="onStepChange($event)"
+    [linear]="true"
+    #stepper
+    orientation="vertical"
+    class="stepper"
+  >
+    <!-- Paso 1: Términos y Condiciones -->
+    <mat-step [stepControl]="formGroup.get('termsAccepted')">
+      <ng-template matStepLabel>Términos y Condiciones</ng-template>
+      <div class="terms-container">
+        <p class="terms-text">
+          {{ termsText }}
+        </p>
+      </div>
+      <form [formGroup]="formGroup">
+        <mat-checkbox formControlName="termsAccepted">
+          Acepto los términos y condiciones
+        </mat-checkbox>
+      </form>
+      <div class="button-container">
+        <button
+          class="mat-button"
+          mat-button
+          matStepperNext
+          [disabled]="!formGroup.get('termsAccepted').value"
+        >
+          Siguiente
+        </button>
+      </div>
+    </mat-step>
+
+    <!-- Paso 2: Información Personal -->
+    <mat-step [stepControl]="formGroup">
+      <ng-template matStepLabel>Información Personal</ng-template>
+      <form [formGroup]="formGroup">
+        <mat-form-field>
+          <mat-label>Número de Identificación</mat-label>
+          <input matInput formControlName="identificacion" required />
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Primer Nombre</mat-label>
+          <input matInput formControlName="firstName" required />
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Apellidos</mat-label>
+          <input matInput formControlName="lastName" required />
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Correo electrónico</mat-label>
+          <input matInput formControlName="email" required />
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Teléfono</mat-label>
+          <input matInput formControlName="telefono" required />
+        </mat-form-field>
+        <div class="file-input">
+          <label for="file-upload" class="file-label"
+            >Subir Documento de Identidad</label
+          >
+          <input
+            type="file"
+            id="file-upload"
+            (change)="onFileSelected($event)"
+            accept=".png,.jpg,.jpeg"
+            class="file-input-hidden"
+          />
+          <span class="file-name" *ngIf="fileName">{{ fileName }}</span>
+
+          <img
+            *ngIf="filePreview"
+            [src]="filePreview"
+            alt="Documento de Identidad"
+            class="file-preview"
+          />
+        </div>
+
+        <div class="button-container">
+          <button class="mat-button" mat-button matStepperPrevious>
+            Atrás
+          </button>
+          <button
+            class="mat-button"
+            mat-button
+            matStepperNext
+            [disabled]="!formGroup.valid"
+          >
+            Siguiente
+          </button>
+        </div>
+      </form>
+    </mat-step>
+
+    <!-- Paso 3: Documento -->
+    <mat-step>
+      <ng-template matStepLabel>Documento</ng-template>
+      <div class="pdf-container">
+        <iframe #pdfIframe [src]="rutaPDF" width="100%" height="500px"></iframe>
+      </div>
+
+      <div class="button-container">
+        <button class="mat-button" mat-button matStepperPrevious>Atrás</button>
+        <button class="mat-button" mat-button matStepperNext>Siguiente</button>
+      </div>
+    </mat-step>
+
+    <!-- Paso 4: Verificación Facial -->
+    <mat-step>
+      <ng-template matStepLabel>Verificación Facial</ng-template>
+      <h2>Verificación Facial</h2>
+      <p>Se requiere verificar su identidad.</p>
+      <mat-progress-bar
+        *ngIf="validando"
+        mode="indeterminate"
+      ></mat-progress-bar>
+      <div class="face-verification">
+        <div class="face-verification__camera">
+          <video *ngIf="!showPhoto" #video autoplay></video>
+          <img
+            *ngIf="showPhoto"
+            [src]="fotoTomada"
+            alt="Foto de Verificación"
+            class="face-verification__photo"
+          />
+          <button
+            *ngIf="!showPhoto"
+            class="mat-button"
+            mat-button
+            (click)="tomarFoto()"
+          >
+            Tomar Foto
+          </button>
+          <button
+            *ngIf="showPhoto"
+            class="mat-button"
+            mat-button
+            (click)="retakePhoto()"
+          >
+            Volver a Tomar Foto
+          </button>
+        </div>
+        <p *ngIf="mostrarErrorVerificacion" class="error-text">
+          La verificación facial ha fallado. Inténtelo de nuevo.
+        </p>
+      </div>
+      <div class="button-container">
+        <button class="mat-button" mat-button matStepperPrevious>Atrás</button>
+        <button
+          class="mat-button"
+          mat-button
+          (click)="validarVerificacionFacial(stepper)"
+        >
+          Siguiente
+        </button>
+      </div>
+    </mat-step>
+
+    <!-- Paso 5: Gracias -->
+    <mat-step>
+      <ng-template matStepLabel>Gracias</ng-template>
+      <h2>¡Gracias por completar el formulario!</h2>
+      <p>Su envío ha sido recibido.</p>
+      <div class="button-container">
+        <!-- enviar -->
+        <button class="mat-button" mat-button (click)="enviarFormulario()">
+          Enviar
+        </button>
+      </div>
+    </mat-step>
+  </mat-stepper>
+
+  <div class="step-content">
+    <ng-container *ngFor="let step of stepper.steps; let i = index">
+      <div *ngIf="stepper.selectedIndex === i">
+        <ng-template [ngTemplateOutlet]="step.content"></ng-template>
+      </div>
+    </ng-container>
+  </div>
+</div>
